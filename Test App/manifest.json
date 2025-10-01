@@ -1,0 +1,14 @@
+{
+	"name": "Cleaning Staff Manager",
+	"short_name": "Cleaning Manager",
+	"description": "Mobile app for cleaning staff to manage tasks, rooms, dates, and pricing",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#667eea",
+	"theme_color": "#4CAF50",
+	"orientation": "portrait-primary",
+	"scope": "/",
+	"lang": "en",
+	"icons": []
+}
+

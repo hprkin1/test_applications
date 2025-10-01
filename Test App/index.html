@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cleaning Staff Manager</title>
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<meta name="theme-color" content="#4CAF50">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="Cleaning Manager">
+</head>
+<body>
+	<div class="app-container">
+		<header class="app-header">
+			<h1><i class="fas fa-broom"></i> Cleaning Manager</h1>
+			<div class="header-actions">
+				<button id="addTaskBtn" class="btn btn-primary">
+					<i class="fas fa-plus"></i> Add Task
+				</button>
+			</div>
+		</header>
+
+		<main class="main-content">
+			<div class="stats-container">
+				<div class="stat-card">
+					<div class="stat-number" id="totalTasks">0</div>
+					<div class="stat-label">Total Tasks</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-number" id="completedTasks">0</div>
+					<div class="stat-label">Completed</div>
+				</div>
+				<div class="stat-card">
+					<div class="stat-number" id="totalEarnings">$0</div>
+					<div class="stat-label">Earnings</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<h2>Today's Tasks</h2>
+				<div id="taskList" class="task-list"></div>
+			</div>
+
+			<div class="section">
+				<h2>Recent Cleanings</h2>
+				<div id="recentCleanings" class="cleaning-list"></div>
+			</div>
+		</main>
+
+		<div id="taskModal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Add New Task</h3>
+					<button class="close-btn" id="closeModal">&times;</button>
+				</div>
+				<form id="taskForm">
+					<div class="form-group">
+						<label for="taskName">Task Name</label>
+						<input type="text" id="taskName" required placeholder="e.g., Vacuum living room">
+					</div>
+					<div class="form-group">
+						<label for="roomName">Room</label>
+						<input type="text" id="roomName" required placeholder="e.g., Living Room">
+					</div>
+					<div class="form-group">
+						<label for="taskDate">Date</label>
+						<input type="date" id="taskDate" required>
+					</div>
+					<div class="form-group">
+						<label for="taskPrice">Price ($)</label>
+						<input type="number" id="taskPrice" step="0.01" min="0" required placeholder="25.00">
+					</div>
+					<div class="form-group">
+						<label for="taskNotes">Notes (Optional)</label>
+						<textarea id="taskNotes" placeholder="Any additional notes..."></textarea>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">Add Task</button>
+						<button type="button" class="btn btn-secondary" id="cancelTask">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="completionModal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Complete Task</h3>
+					<button class="close-btn" id="closeCompletionModal">&times;</button>
+				</div>
+				<form id="completionForm">
+					<div class="form-group">
+						<label for="completionDate">Completion Date</label>
+						<input type="date" id="completionDate" required>
+					</div>
+					<div class="form-group">
+						<label for="completionTime">Completion Time</label>
+						<input type="time" id="completionTime" required>
+					</div>
+					<div class="form-group">
+						<label for="completionNotes">Completion Notes</label>
+						<textarea id="completionNotes" placeholder="Any notes about the completion..."></textarea>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-success">Mark Complete</button>
+						<button type="button" class="btn btn-secondary" id="cancelCompletion">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
+

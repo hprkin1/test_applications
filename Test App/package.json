@@ -1,0 +1,11 @@
+{
+	"name": "cleaning-staff-manager",
+	"version": "1.0.0",
+	"description": "Mobile-friendly PWA for cleaning staff",
+	"main": "index.html",
+	"scripts": {
+		"start": "npx --yes http-server -p 8000 -c-1 --cors",
+		"serve": "npx --yes http-server -p 8000 -c-1 --cors"
+	}
+}
+
